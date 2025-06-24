@@ -1,6 +1,6 @@
+import "./styles/globals.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router";
 import AppLayout from "./components/Layouts/AppLayout/AppLayout";
 import FindAnOpponent from "./features/Application/MainMenu/FindAnOpponent/FindAnOpponent";
@@ -15,61 +15,69 @@ import Register from "./features/Auth/Register/Register";
 import Notifications from "./features/Application/Notifications/Notifications";
 import Notification from "./features/Application/Notifications/Notification/Notification";
 import BaseLayout from "./components/Layouts/BaseLayout/BaseLayout";
+import "@mantine/core/styles.css";
+
+import { MantineProvider } from "@mantine/core";
 // import NotificationsRoute from "./routes/notifications";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<BaseLayout />}>
-          {/* This route is responsive for the public Auth pages Welcome - Login - Register */}
-          <Route element={<AuthLayout />}>
-            <Route
-              index // <-- "/"
-              element={<Home />}
-            />
-
-            <Route path="login" element={<Login />} />
-
-            <Route path="register" element={<Register />} />
-          </Route>
-
-          <Route
-            path="/welcome"
-            element={<div>This is the welcome page</div>}
-          />
-
-          <Route path="/dashboard" element={<AppLayout />}>
-            <Route
-              index // <-- "/dashboard"
-              element={<HomeScreen />}
-            />
-
-            <Route path="/dashboard/notifications">
+    <MantineProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<BaseLayout />}>
+            {/* This route is responsive for the public Auth pages Welcome - Login - Register */}
+            <Route element={<AuthLayout />}>
               <Route
-                index // <-- "/dashboard/notifications"
-                element={<Notifications />}
+                index // <-- "/"
+                element={<Home />}
               />
 
-              <Route
-                path=":notificationId" // <-- "/dashboard/notifications/:notificationId"
-                element={<Notification />}
-              />
+              <Route path="login" element={<Login />} />
+
+              <Route path="register" element={<Register />} />
             </Route>
 
-            <Route path="/dashboard/my-bookings" element={<MyBookings />} />
-
-            <Route path="/dashboard/make-booking" element={<MakeABooking />} />
-
             <Route
-              path="/dashboard/find-opponent"
-              element={<FindAnOpponent />}
+              path="/welcome"
+              element={<div>This is the welcome page</div>}
             />
 
-            <Route path="/dashboard/account" element={<MyAccount />} />
+            <Route path="/dashboard" element={<AppLayout />}>
+              <Route
+                index // <-- "/dashboard"
+                element={<HomeScreen />}
+              />
+
+              <Route path="/dashboard/notifications">
+                <Route
+                  index // <-- "/dashboard/notifications"
+                  element={<Notifications />}
+                />
+
+                <Route
+                  path=":notificationId" // <-- "/dashboard/notifications/:notificationId"
+                  element={<Notification />}
+                />
+              </Route>
+
+              <Route path="/dashboard/my-bookings" element={<MyBookings />} />
+
+              <Route
+                path="/dashboard/make-booking"
+                element={<MakeABooking />}
+              />
+
+              <Route
+                path="/dashboard/find-opponent"
+                element={<FindAnOpponent />}
+              />
+
+              <Route path="/dashboard/account" element={<MyAccount />} />
+            </Route>
           </Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </MantineProvider>
   </StrictMode>
 );
