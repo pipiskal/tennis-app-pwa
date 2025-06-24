@@ -3,10 +3,54 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  line-height: 1;
 }
 
 :root {
-  --colors-red: red;
+  /* Primary color */
+  --colors-primary-10: var(--mantine-color-primary-0);
+  --colors-primary-20: var(--mantine-color-primary-1);
+  --colors-primary-30: var(--mantine-color-primary-2);
+  --colors-primary-40: var(--mantine-color-primary-3);
+  --colors-primary-50: var(--mantine-color-primary-4);
+  --colors-primary-60: var(--mantine-color-primary-5);
+  --colors-primary-70: var(--mantine-color-primary-6);
+  --colors-primary-80: var(--mantine-color-primary-7);
+  --colors-primary-90: var(--mantine-color-primary-8);
+  --colors-primary-100: var(--mantine-color-primary-9);
+
+  /* Secondary color */
+  --colors-secondary-10: var(--mantine-color-secondary-0);
+  --colors-secondary-20: var(--mantine-color-secondary-1);
+  --colors-secondary-30: var(--mantine-color-secondary-2);
+  --colors-secondary-40: var(--mantine-color-secondary-3);
+  --colors-secondary-50: var(--mantine-color-secondary-4);
+  --colors-secondary-60: var(--mantine-color-secondary-5);
+  --colors-secondary-70: var(--mantine-color-secondary-6);
+  --colors-secondary-80: var(--mantine-color-secondary-7);
+  --colors-secondary-90: var(--mantine-color-secondary-8);
+  --colors-secondary-100: var(--mantine-color-secondary-9);
+
+  /* Text colors */
+  --colors-text-10: var(--mantine-color-text-0);
+  --colors-text-20: var(--mantine-color-text-1);
+  --colors-text-30: var(--mantine-color-text-2);
+  --colors-text-40: var(--mantine-color-text-3);
+  --colors-text-50: var(--mantine-color-text-4);
+  --colors-text-60: var(--mantine-color-text-5);
+  --colors-text-70: var(--mantine-color-text-6);
+  --colors-text-80: var(--mantine-color-text-7);
+  --colors-text-90: var(--mantine-color-text-8);
+  --colors-text-100: var(--mantine-color-text-9);
+
+  --edge-corners: polygon(
+    0 0,
+    /* top-left */ calc(100% - 20px) 0,
+    /* top-right before cut */ 100% 20px,
+    /* cut corner */ 100% 100%,
+    /* bottom-right */ 20px 100%,
+    /* bottom-left after cut */ 0 calc(100% - 20px) /* cut corner */
+  );
 
   /* font-synthesis: none; */
   text-rendering: optimizeLegibility;

@@ -1,11 +1,15 @@
 import { useNavigate } from "react-router";
-import { Button } from "../../../components/Button/Button";
+import { MyButton } from "../../../components/Button/Button";
 
 const Login = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div
+      style={{
+        padding: 32,
+      }}
+    >
       <ol>
         <p>Hello</p>
         <li onClick={() => navigate("/")}>Back to home - Welcome 333</li>
@@ -16,8 +20,15 @@ const Login = () => {
 
         <li onClick={() => navigate("/dashboard")}>LOGIN!!!!!!</li>
       </ol>
+      <br />
 
-      <Button label={"dadada"} onClick={() => console.log("dadada")} />
+      <br />
+
+      <MyButton label={"Log in"} onClick={() => console.log("dadada")} />
+
+      <br />
+
+      <br />
     </div>
   );
 };

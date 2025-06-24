@@ -1,0 +1,49 @@
+.root {
+  position: relative;
+  background-color: white;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  width: 100%;
+  padding: 6px 32px;
+  height: 44px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+  clip-path: var(--edge-corners);
+  z-index: 1;
+}
+
+.root:active {
+  /* transform: translateY(10px);
+  will-change: transform; */
+}
+
+.root::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background-color: var(--colors-primary-90);
+  clip-path: var(--edge-corners);
+  margin: -2px;
+  z-index: -1;
+}
+
+/* Primary variant */
+.root[data-variant="primary"]:hover::after {
+  background-color: var(--colors-primary-80);
+}
+
+.root[data-variant="primary"]:hover {
+  background-color: white;
+}
+
+/* Secondary variant */
+.root[data-variant="secondary"] {
+  background-color: yellow;
+  color: var(--colors-primary-90);
+}
+
+.root[data-variant="secondary"]::after {
+  background-color: transparent;
+}
