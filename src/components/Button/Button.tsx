@@ -16,6 +16,10 @@ export interface ButtonProps {
 }
 
 /** Primary UI component for user interaction */
-export const MyButton = ({ label }: ButtonProps) => {
-  return <Button variant="primary">{label}</Button>;
+export const MyButton = ({ label, onClick }: ButtonProps) => {
+  return (
+    <Button variant="primary" onClick={onClick}>
+      {label}
+    </Button>
+  );
 };

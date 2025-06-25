@@ -1,10 +1,14 @@
 import { useNavigate } from "react-router";
 
-const Register = () => {
+type RegisterViewProps = {
+  onLogin: () => void;
+};
+
+const Register = ({ onLogin }: RegisterViewProps) => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div onClick={onLogin}>
       <ol>
         <li onClick={() => navigate("/")}>Back to home - Welcome</li>
 
