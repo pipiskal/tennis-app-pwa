@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router";
 import { MyButton } from "../../../components/Button/Button";
 
 type LoginViewProps = {
@@ -6,8 +5,6 @@ type LoginViewProps = {
 };
 
 const Login = ({ onRegister }: LoginViewProps) => {
-  const navigate = useNavigate();
-
   return (
     <div
       style={{

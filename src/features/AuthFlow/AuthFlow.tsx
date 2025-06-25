@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
 import AuthLayout from "./AuthLayout/AuthLayout";
 import { MyButton } from "../../components/Button/Button";
 import { Box, Transition } from "@mantine/core";
 import s from "./AuthFlow.module.css";
+import { useNavigate } from "react-router";
 
 const AuthFlow = () => {
   const [currentView, setCurrentView] = useState("welcome");
