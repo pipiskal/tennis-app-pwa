@@ -13,6 +13,11 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  server: {
+    host: "0.0.0.0", // Allows external connections
+    port: 5137, // Or your preferred port
+    strictPort: true,
+  },
   plugins: [react()],
   test: {
     projects: [
