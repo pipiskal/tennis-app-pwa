@@ -2,7 +2,6 @@ import "./styles/globals.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
-import BaseLayout from "./layouts/BaseLayout/BaseLayout";
 import "@mantine/core/styles.css";
 import { MantineProvider, colorsTuple, createTheme } from "@mantine/core";
 import buttonStyles from "./styles/MantineComponents/Button.module.css";
@@ -64,12 +63,10 @@ createRoot(document.getElementById("root")!).render(
     <MantineProvider theme={theme} defaultColorScheme="light">
       <BrowserRouter>
         <Routes>
-          <Route element={<BaseLayout />}>
-            <Route
-              index // <-- "/"
-              element={<AuthFlow />}
-            />
-          </Route>
+          <Route
+            index // <-- "/"
+            element={<AuthFlow />}
+          />
         </Routes>
       </BrowserRouter>
     </MantineProvider>
