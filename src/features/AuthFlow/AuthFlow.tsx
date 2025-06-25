@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
-import AuthLayout from "./AuthLayout/AuthLayout";
 import { MyButton } from "../../components/Button/Button";
 import { Box } from "@mantine/core";
 import s from "./AuthFlow.module.css";
@@ -36,48 +36,45 @@ const AuthFlow = () => {
     });
   };
 
-  const views = {
-    welcome: (
-      <Box className={`${s.wrapper} ${s.welcomeViewWrapper}`}>
-        <MyButton onClick={goToLogin} label="Login" />
+  //   const views = {
+  //     welcome: (
+  //       <Box className={`${s.wrapper} ${s.welcomeViewWrapper}`}>
+  //         <MyButton onClick={goToLogin} label="Login" />
 
-        <MyButton onClick={goToRegister} label="Register" />
-      </Box>
-    ),
-    login: (
-      <Box className={`${s.wrapper} ${s.loginViewWrapper}`}>
-        <Login onRegister={goToRegister} />
-      </Box>
-    ),
-    register: (
-      <Box className={`${s.wrapper} ${s.registerViewWrapper}`}>
-        <Register onLogin={goToLogin} onWelcome={goToWelcome} />
-      </Box>
-    ),
-  };
+  //         <MyButton onClick={goToRegister} label="Register" />
+  //       </Box>
+  //     ),
+  //     login: (
+  //       <Box className={`${s.wrapper} ${s.loginViewWrapper}`}>
+  //         <Login onRegister={goToRegister} />
+  //       </Box>
+  //     ),
+  //     register: (
+  //       <Box className={`${s.wrapper} ${s.registerViewWrapper}`}>
+  //         <Register onLogin={goToLogin} onWelcome={goToWelcome} />
+  //       </Box>
+  //     ),
+  //   };
 
   return (
-    <AuthLayout currentView={currentView}>
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={currentView}
-          initial={{ x: currentView === "welcome" ? 0 : -300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: 300, opacity: 0 }}
-          transition={{ type: "tween", ease: "easeInOut", duration: 0.3 }}
-          style={
-            {
-              // border: "1px solid red",
-              // height: "100vh",
-            }
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={currentView}
+        initial={{ x: currentView === "welcome" ? 0 : -300, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: 300, opacity: 0 }}
+        transition={{ type: "tween", ease: "easeInOut", duration: 0.3 }}
+        style={
+          {
+            // border: "1px solid red",
+            // height: "100vh",
           }
-        >
-          {views[currentView as keyof typeof views]}
-        </motion.div>
-      </AnimatePresence>
-
-      {/* {views[currentView as keyof typeof views]} */}
-    </AuthLayout>
+        }
+      >
+        {/* {views[currentView as keyof typeof views]} */}
+        <div>takis</div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
