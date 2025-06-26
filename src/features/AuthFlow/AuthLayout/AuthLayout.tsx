@@ -1,14 +1,13 @@
 import s from "./AuthLayout.module.css";
 import { Box, ScrollArea } from "@mantine/core";
-import { Outlet, useLocation } from "react-router";
+import { useLocation, useOutlet } from "react-router";
 import { AnimatePresence } from "framer-motion";
 import AnimatedAuthPage from "../../../components/AnimateAuthPage/AnimatedAuthPage";
 
 const AuthLayout = () => {
   const location = useLocation();
-  // const isLogin = location.pathname === "/login";
-  // const isRegister = location.pathname === "/register";
   const isHome = location.pathname === "/";
+  const currentOutlet = useOutlet();
 
   return (
     <Box className={`${s.wrapper}`}>
@@ -39,9 +38,11 @@ const AuthLayout = () => {
         </Box>
 
         <AnimatePresence mode="wait" initial={false}>
-          <AnimatedAuthPage key={location.pathname}>
-            <Outlet />
-          </AnimatedAuthPage>
+          {currentOutlet && (
+            <AnimatedAuthPage key={location.pathname}>
+              {currentOutlet}
+            </AnimatedAuthPage>
+          )}
         </AnimatePresence>
       </ScrollArea>
     </Box>

@@ -3,9 +3,15 @@ import "@mantine/core/styles.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
-import { MantineProvider, colorsTuple, createTheme } from "@mantine/core";
+import {
+  Button,
+  Input,
+  MantineProvider,
+  colorsTuple,
+  createTheme,
+} from "@mantine/core";
 import buttonStyles from "./styles/MantineComponents/Button.module.css";
-
+import inputStyles from "./styles/MantineComponents/Input.module.css";
 import App from "./app";
 
 // TODO : this can be moved outside
@@ -51,12 +57,18 @@ const theme = createTheme({
     ],
   },
   components: {
-    Button: {
+    Button: Button.extend({
       classNames: buttonStyles,
       defaultProps: {
-        color: "primary",
+        variant: "primary",
       },
-    },
+    }),
+    Input: Input.extend({
+      classNames: inputStyles,
+      // defaultProps: {
+      //   variant: "primary",
+      // },
+    }),
   },
 });
 
