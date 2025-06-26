@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router";
-import AnimatedAuthPage from "../../../components/AnimateAuthPage/AnimatedAuthPage";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -22,15 +21,13 @@ const Register = () => {
   };
 
   return (
-    <AnimatedAuthPage>
-      <div>
-        <ol>
-          <li onClick={goToWelcome}>Back to home - Welcome</li>
+    <div>
+      <ol>
+        <li onClick={goToWelcome}>Back to home - Welcome</li>
 
-          <li onClick={goToLogin}>already have an account LOGIN !!</li>
-        </ol>
-      </div>
-    </AnimatedAuthPage>
+        <li onClick={goToLogin}>already have an account LOGIN !!</li>
+      </ol>
+    </div>
   );
 };
 

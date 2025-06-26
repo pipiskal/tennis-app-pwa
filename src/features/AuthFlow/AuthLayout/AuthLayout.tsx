@@ -1,11 +1,8 @@
 import { Box } from "@mantine/core";
 import s from "./AuthLayout.module.css";
 import { Outlet, useLocation } from "react-router";
-
-// type AuthLayoutProps = {
-//   children: React.ReactNode;
-//   currentView: string;
-// };
+import { AnimatePresence } from "framer-motion";
+import AnimatedAuthPage from "../../../components/AnimateAuthPage/AnimatedAuthPage";
 
 const AuthLayout = () => {
   const location = useLocation();
@@ -38,9 +35,11 @@ const AuthLayout = () => {
         </p>
       </Box>
 
-      {/* <Box>{children}</Box> */}
-
-      <Outlet />
+      <AnimatePresence mode="wait" initial={false}>
+        <AnimatedAuthPage key={location.pathname}>
+          <Outlet />
+        </AnimatedAuthPage>
+      </AnimatePresence>
     </Box>
   );
 };

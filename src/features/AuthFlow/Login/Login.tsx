@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router";
 import { MyButton } from "../../../components/Button/Button";
-import AnimatedAuthPage from "../../../components/AnimateAuthPage/AnimatedAuthPage";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -14,29 +13,27 @@ const Login = () => {
   };
 
   return (
-    <AnimatedAuthPage>
-      <div
-        style={{
-          padding: 32,
-          height: 400,
-        }}
-      >
-        <ol>
-          <p>Hello</p>
+    <div
+      style={{
+        padding: 32,
+        height: 400,
+      }}
+    >
+      <ol>
+        <p>Hello</p>
 
-          <li onClick={goToRegister}>Do not have an account Register !!</li>
-        </ol>
-        <br />
+        <li onClick={goToRegister}>Do not have an account Register !!</li>
+      </ol>
+      <br />
 
-        <br />
+      <br />
 
-        <MyButton label={"Log in"} />
+      <MyButton label={"Log in"} />
 
-        <br />
+      <br />
 
-        <br />
-      </div>
-    </AnimatedAuthPage>
+      <br />
+    </div>
   );
 };
 
