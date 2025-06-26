@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useNavigate } from "react-router";
 import { MyButton } from "../../../components/Button/Button";
-import { motion } from "framer-motion";
+import AnimatedAuthPage from "../../../components/AnimateAuthPage/AnimatedAuthPage";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,40 +14,29 @@ const Login = () => {
   };
 
   return (
-    // <motion.div
-    //   initial={{ x: -300, opacity: 0 }}
-    //   animate={{ x: 0, opacity: 1 }}
-    //   exit={{ x: 300, opacity: 0 }}
-    //   transition={{ type: "tween", ease: "easeInOut", duration: 0.3 }}
-    //   style={
-    //     {
-    //       // border: "1px solid red",
-    //       // height: "100vh",
-    //     }
-    //   }
-    // >
-    <div
-      style={{
-        padding: 32,
-        height: 400,
-      }}
-    >
-      <ol>
-        <p>Hello</p>
+    <AnimatedAuthPage>
+      <div
+        style={{
+          padding: 32,
+          height: 400,
+        }}
+      >
+        <ol>
+          <p>Hello</p>
 
-        <li onClick={goToRegister}>Do not have an account Register !!</li>
-      </ol>
-      <br />
+          <li onClick={goToRegister}>Do not have an account Register !!</li>
+        </ol>
+        <br />
 
-      <br />
+        <br />
 
-      <MyButton label={"Log in"} />
+        <MyButton label={"Log in"} />
 
-      <br />
+        <br />
 
-      <br />
-    </div>
-    // </motion.div>
+        <br />
+      </div>
+    </AnimatedAuthPage>
   );
 };
 

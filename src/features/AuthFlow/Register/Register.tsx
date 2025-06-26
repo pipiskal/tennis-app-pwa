@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
+import AnimatedAuthPage from "../../../components/AnimateAuthPage/AnimatedAuthPage";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -23,26 +22,15 @@ const Register = () => {
   };
 
   return (
-    // <motion.div
-    //   initial={{ x: -300, opacity: 0 }}
-    //   animate={{ x: 0, opacity: 1 }}
-    //   exit={{ x: 300, opacity: 0 }}
-    //   transition={{ type: "tween", ease: "easeInOut", duration: 0.3 }}
-    //   style={
-    //     {
-    //       // border: "1px solid red",
-    //       // height: "100vh",
-    //     }
-    //   }
-    // >
-    <div>
-      <ol>
-        <li onClick={goToWelcome}>Back to home - Welcome</li>
+    <AnimatedAuthPage>
+      <div>
+        <ol>
+          <li onClick={goToWelcome}>Back to home - Welcome</li>
 
-        <li onClick={goToLogin}>already have an account LOGIN !!</li>
-      </ol>
-    </div>
-    // </motion.div>
+          <li onClick={goToLogin}>already have an account LOGIN !!</li>
+        </ol>
+      </div>
+    </AnimatedAuthPage>
   );
 };
 
