@@ -1,43 +1,35 @@
-.wrapper {
-  /* height: 44px; */
-  /* border: 4px solid red; */
+.wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
   clip-path: var(--edge-corners);
+  margin: -2px;
+  z-index: -1;
+  background-color: gray;
+  transition: all 0.1s ease;
 }
 
 .input {
-  height: 44px;
+  height: 52px;
+  border: none;
   border-radius: 0;
-  /* border-color: red; */
-  /* border: none; */
-  /* clip-path: var(--edge-corners); */
-  /* border: 4px solid green; */
+  clip-path: var(--edge-corners);
+  font-size: 16px;
+  padding: 0 24px;
+  background-color: white;
 }
 
 .section {
   border: 4px solid blue;
 }
 
-/* .input[data-variant="primary"] {
-  height: 56px;
-  border: 1px solid var(--color-gray300);
-  padding: 0 var(--spacing-md);
-  font-size: 14px;
-  font-weight: 400;
-  border-radius: 5px;
-  transition: background-color 0.6s ease;
-  background-color: var(--color-white);
-  transition: all 0.3 ease;
+.wrapper[data-variant="primary"]:focus-within::after {
+  background-color: darkgray;
+  margin: -3px;
+  /* inset: 1px; */
 }
 
-.input[data-variant="primary"]:focus {
-  border-color: var(--color-blue);
-}
-
-.input[data-variant="primary"]:focus-within {
-  border-color: var(--color-blue);
-}
-
-.input[data-variant="primary"][data-error] {
+/* .input[data-variant="primary"][data-error] {
   border-color: var(--color-error);
 }
 
@@ -51,65 +43,4 @@
 
 .input[data-variant="primary"][data-disabled] {
   background-color: var(--color-bg3);
-} */
-
-/* .input[data-variant="filled"] {
-  height: 42px;
-  padding: 0 var(--spacing-md);
-  padding-right: 60px;
-  font-size: 14px;
-  font-weight: 400;
-  border-radius: 5px;
-  width: 387px;
-  background-color: var(--color-bg3);
-}
-
-.input[data-variant="filled"]:focus {
-  border-color: var(--color-blue);
-}
-
-.input[data-variant="filled"]:focus-within {
-  border-color: var(--color-blue);
-}
-
-.input[data-variant="filled"][data-error] {
-  border-color: var(--color-error);
-}
-
-.input[data-variant="filled"][data-error]:focus {
-  border: 1px solid var(--color-red);
-}
-
-.input[data-variant="filled"][data-error]:focus-within {
-  border: 1px solid var(--color-red);
-}
-
-.input[data-variant="simple"] {
-  height: 42px;
-  padding: 0 var(--spacing-md);
-  padding-right: 60px;
-  font-size: 14px;
-  font-weight: 400;
-  border-radius: 5px;
-  width: 387px;
-}
-
-.input[data-variant="simple"]:focus {
-  border-color: var(--color-blue);
-}
-
-.input[data-variant="simple"]:focus-within {
-  border-color: var(--color-blue);
-}
-
-.input[data-variant="simple"][data-error] {
-  border-color: var(--color-error);
-}
-
-.input[data-variant="simple"][data-error]:focus {
-  border: 1px solid var(--color-red);
-}
-
-.input[data-variant="simple"][data-error]:focus-within {
-  border: 1px solid var(--color-red);
 } */

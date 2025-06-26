@@ -65,9 +65,9 @@ const theme = createTheme({
     }),
     Input: Input.extend({
       classNames: inputStyles,
-      // defaultProps: {
-      //   variant: "primary",
-      // },
+      defaultProps: {
+        variant: "primary",
+      },
     }),
   },
 });

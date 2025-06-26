@@ -23,13 +23,13 @@ const Register = () => {
 
       <br />
 
-      <Input placeholder="First name" type="text" mb={8} size="md" />
+      <Input placeholder="First name" type="text" mb={24} size="md" />
 
-      <Input placeholder="Last name" type="text" mb={8} size="md" />
+      <Input placeholder="Last name" type="text" mb={24} size="md" />
 
-      <Input placeholder="Email" type="email" mb={16} size="md" />
+      <Input placeholder="Email" type="email" mb={24} size="md" />
 
-      <Input placeholder="Password" type="password" mb={16} size="md" />
+      <Input placeholder="Password" type="password" mb={24} size="md" />
 
       <Box
         mb={24}
