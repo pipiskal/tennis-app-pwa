@@ -1,12 +1,14 @@
 import "./styles/globals.css";
+import "@mantine/core/styles.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router";
-import "@mantine/core/styles.css";
+import { BrowserRouter } from "react-router";
 import { MantineProvider, colorsTuple, createTheme } from "@mantine/core";
 import buttonStyles from "./styles/MantineComponents/Button.module.css";
-import AuthFlow from "./features/AuthFlow/AuthFlow";
 
+import App from "./app";
+
+// TODO : this can be moved outside
 const theme = createTheme({
   colors: {
     customPink: colorsTuple("#FFC0CB"),
@@ -60,15 +62,10 @@ const theme = createTheme({
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <MantineProvider theme={theme} defaultColorScheme="light">
-      <BrowserRouter>
-        <Routes>
-          <Route
-            index // <-- "/"
-            element={<AuthFlow />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </MantineProvider>
+    <BrowserRouter>
+      <MantineProvider theme={theme} defaultColorScheme="light">
+        <App />
+      </MantineProvider>
+    </BrowserRouter>
   </StrictMode>
 );

@@ -1,17 +1,36 @@
-type RegisterViewProps = {
-  onLogin: () => void;
-  onWelcome: () => void;
-};
+import { useNavigate } from "react-router";
+import AnimatedAuthPage from "../../../components/AnimateAuthPage/AnimatedAuthPage";
 
-const Register = ({ onLogin, onWelcome }: RegisterViewProps) => {
+const Register = () => {
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    console.log("go to login");
+    // Push a new entry to history stack
+    navigate("/login", {
+      state: { view: "login", canGoBack: true },
+      // replace: true,
+    });
+  };
+
+  const goToWelcome = () => {
+    // Push a new entry to history stack
+    navigate("/", {
+      state: { view: "welcome", canGoBack: false },
+      // replace: true,
+    });
+  };
+
   return (
-    <div>
-      <ol>
-        <li onClick={onWelcome}>Back to home - Welcome</li>
+    <AnimatedAuthPage>
+      <div>
+        <ol>
+          <li onClick={goToWelcome}>Back to home - Welcome</li>
 
-        <li onClick={onLogin}>already have an account LOGIN !!</li>
-      </ol>
-    </div>
+          <li onClick={goToLogin}>already have an account LOGIN !!</li>
+        </ol>
+      </div>
+    </AnimatedAuthPage>
   );
 };
 

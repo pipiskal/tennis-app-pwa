@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 16px;
+}
+
+.welcomeViewWrapper {
+  height: 20dvh;
+  min-height: 160px;
+
+  /* border: 1px solid red; */
+}

@@ -1,12 +1,17 @@
 import { Box } from "@mantine/core";
 import s from "./AuthLayout.module.css";
+import { Outlet, useLocation } from "react-router";
 
-type AuthLayoutProps = {
-  children: React.ReactNode;
-  currentView: string;
-};
+// type AuthLayoutProps = {
+//   children: React.ReactNode;
+//   currentView: string;
+// };
 
-const AuthLayout = ({ children, currentView }: AuthLayoutProps) => {
+const AuthLayout = () => {
+  const location = useLocation();
+  console.log(location.pathname);
+  const currentView = location.pathname.split("/").pop();
+
   return (
     <Box className={`${s.wrapper}`}>
       <img
@@ -33,7 +38,9 @@ const AuthLayout = ({ children, currentView }: AuthLayoutProps) => {
         </p>
       </Box>
 
-      <Box>{children}</Box>
+      {/* <Box>{children}</Box> */}
+
+      <Outlet />
     </Box>
   );
 };

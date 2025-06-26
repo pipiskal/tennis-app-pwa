@@ -1,32 +1,42 @@
+import { useNavigate } from "react-router";
 import { MyButton } from "../../../components/Button/Button";
+import AnimatedAuthPage from "../../../components/AnimateAuthPage/AnimatedAuthPage";
 
-type LoginViewProps = {
-  onRegister: () => void;
-};
+const Login = () => {
+  const navigate = useNavigate();
 
-const Login = ({ onRegister }: LoginViewProps) => {
+  const goToRegister = () => {
+    // Push a new entry to history stack
+    navigate("/register", {
+      state: { view: "register", canGoBack: true },
+      // replace: ,
+    });
+  };
+
   return (
-    <div
-      style={{
-        padding: 32,
-        height: 400,
-      }}
-    >
-      <ol>
-        <p>Hello</p>
+    <AnimatedAuthPage>
+      <div
+        style={{
+          padding: 32,
+          height: 400,
+        }}
+      >
+        <ol>
+          <p>Hello</p>
 
-        <li onClick={onRegister}>Do not have an account Register !!</li>
-      </ol>
-      <br />
+          <li onClick={goToRegister}>Do not have an account Register !!</li>
+        </ol>
+        <br />
 
-      <br />
+        <br />
 
-      <MyButton label={"Log in"} />
+        <MyButton label={"Log in"} />
 
-      <br />
+        <br />
 
-      <br />
-    </div>
+        <br />
+      </div>
+    </AnimatedAuthPage>
   );
 };
 
