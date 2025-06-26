@@ -8,6 +8,7 @@ import buttonStyles from "./styles/MantineComponents/Button.module.css";
 
 import App from "./app";
 
+// TODO : this can be moved outside
 const theme = createTheme({
   colors: {
     customPink: colorsTuple("#FFC0CB"),
