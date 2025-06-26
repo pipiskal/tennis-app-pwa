@@ -58,14 +58,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* body {
-  height: 100%;
-  border: 2px solid blue;
-} */
-
-/* #root {
-
-} */
+#root {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
 .flexAlignCenter {
   display: flex;

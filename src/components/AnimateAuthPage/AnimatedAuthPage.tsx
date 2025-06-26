@@ -21,8 +21,8 @@ const pageVariants = {
 
 const pageTransition = {
   type: "tween",
-  ease: "anticipate",
-  duration: 0.5,
+  ease: "easeInOut",
+  duration: 0.3,
 } as const;
 
 const AnimatedAuthPage = ({ children }: AnimatedAuthPageProps) => {
@@ -33,12 +33,6 @@ const AnimatedAuthPage = ({ children }: AnimatedAuthPageProps) => {
       exit="out"
       variants={pageVariants}
       transition={pageTransition}
-      style={{
-        // position: "absolute",
-        width: "100%",
-        height: "100%",
-        border: "1px solid red",
-      }}
     >
       {children}
     </motion.div>

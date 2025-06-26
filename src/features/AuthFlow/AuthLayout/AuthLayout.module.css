@@ -1,25 +1,17 @@
 .wrapper {
   position: relative;
-  min-height: 100dvh;
-  /* max-height: 100dvh; */
-  height: 100%;
-  color: white;
-  font-weight: bold;
-  z-index: 0;
-  max-width: 500px;
+  height: 100dvh;
   margin: 0 auto;
   overflow: hidden;
+  z-index: 0;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  color: white;
+  font-weight: bold;
 }
 
 .wrapper::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: black;
@@ -38,24 +30,26 @@
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  min-height: 100px;
+  min-width: 100px;
   border-radius: 50%;
   background-color: yellow;
 }
 
 .content {
-  position: absolute;
-  top: 8%;
-  height: 250px;
   padding: 0 24px;
-  transition: all 0.3s ease;
+  margin-top: 0;
+  margin-bottom: 0px;
+  transition: margin-top 0.6s ease;
 }
 
-.contentPlaceholder {
-  height: 260px;
+.test {
+  margin-top: 86px;
+  margin-bottom: 64px;
 }
 
-.loginRegisterContent {
-  top: 0%;
+.scrollAreaContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }

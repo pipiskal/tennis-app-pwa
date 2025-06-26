@@ -6,8 +6,5 @@
 }
 
 .welcomeViewWrapper {
-  height: 20dvh;
-  min-height: 160px;
-
-  /* border: 1px solid red; */
+  margin-top: calc(30vh - 150px);
 }

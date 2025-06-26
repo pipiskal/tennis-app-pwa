@@ -21,7 +21,12 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        height: "700px",
+        // border: "6px solid orange"
+      }}
+    >
       <ol>
         <li onClick={goToWelcome}>Back to home - Welcome</li>
 
