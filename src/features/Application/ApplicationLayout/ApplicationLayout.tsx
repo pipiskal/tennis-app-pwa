@@ -1,5 +1,5 @@
 import styles from "./ApplicationLayout.module.css";
-import { Box, ScrollArea } from "@mantine/core";
+import { Box } from "@mantine/core";
 import { useOutlet } from "react-router";
 import BottomNavigation from "../../../components/navigation/BottomNavigation/BottomNavigation";
 

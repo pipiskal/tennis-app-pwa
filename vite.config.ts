@@ -35,6 +35,7 @@ export default defineConfig({
           browser: {
             enabled: true,
             headless: true,
+            // @ts-ignore
             provider: "playwright",
             instances: [
               {
