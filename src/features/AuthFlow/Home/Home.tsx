@@ -1,7 +1,7 @@
 import { Box } from "@mantine/core";
 import { useNavigate } from "react-router";
-import { MyButton } from "../../../components/Button/Button";
 import s from "./Home.module.css";
+import Button from "../../../components/ui-kit/Button/Button";
 // import { motion } from "framer-motion";
 
 const Home = () => {
@@ -28,9 +28,9 @@ const Home = () => {
 
   return (
     <Box className={`${s.wrapper} ${s.welcomeViewWrapper}`}>
-      <MyButton onClick={goToLogin} label="Login" />
+      <Button onClick={goToLogin} label="Login" />
 
-      <MyButton onClick={goToRegister} label="Register" />
+      <Button onClick={goToRegister} label="Register" />
     </Box>
   );
 };

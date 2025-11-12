@@ -7,12 +7,17 @@ import {
   Button,
   Input,
   MantineProvider,
+  SegmentedControl,
   colorsTuple,
   createTheme,
 } from "@mantine/core";
+import type { MantineColorsTuple } from "@mantine/core";
 import buttonStyles from "./styles/MantineComponents/Button.module.css";
 import inputStyles from "./styles/MantineComponents/Input.module.css";
+import segmentedControlStyles from "./styles/MantineComponents/SegmentedControl.module.css";
 import App from "./app";
+
+const flatTen = (hex: string): MantineColorsTuple => colorsTuple(hex);
 
 // TODO : this can be moved outside
 const theme = createTheme({
@@ -26,6 +31,7 @@ const theme = createTheme({
       "#8799A4",
       "#708592",
       "#587180",
+      // Main background color
       "#2B485A",
       "#10344A",
       "#092535",
@@ -55,7 +61,10 @@ const theme = createTheme({
       "#3E444C",
       "#282F38",
     ],
+    // Leave it for future use we will use the 2B485A color for the main background
+    "background-main": flatTen("#2C485A"),
   },
+
   components: {
     Button: Button.extend({
       classNames: buttonStyles,
@@ -65,6 +74,12 @@ const theme = createTheme({
     }),
     Input: Input.extend({
       classNames: inputStyles,
+      defaultProps: {
+        variant: "primary",
+      },
+    }),
+    SegmentedControl: SegmentedControl.extend({
+      classNames: segmentedControlStyles,
       defaultProps: {
         variant: "primary",
       },

@@ -1,6 +1,6 @@
-import { Button } from "@mantine/core";
+import { Button as MantineButton } from "@mantine/core";
 
-export interface ButtonProps {
+interface ButtonProps {
   /** Is this the principal call to action on the page? */
   primary?: boolean;
   /** What background color to use */
@@ -14,10 +14,12 @@ export interface ButtonProps {
 }
 
 /** Primary UI component for user interaction */
-export const MyButton = ({ label, onClick }: ButtonProps) => {
+const Button = ({ label, onClick }: ButtonProps) => {
   return (
-    <Button variant="primary" onClick={onClick}>
+    <MantineButton variant="primary" onClick={onClick}>
       {label}
-    </Button>
+    </MantineButton>
   );
 };
+
+export default Button;

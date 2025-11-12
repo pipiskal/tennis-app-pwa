@@ -31,6 +31,10 @@
   --colors-secondary-90: var(--mantine-color-secondary-8);
   --colors-secondary-100: var(--mantine-color-secondary-9);
 
+  /* Background colors */
+
+  --colors-background-main: var(--mantine-color-background-main-1);
+
   /* Text colors */
   --colors-text-10: var(--mantine-color-text-0);
   --colors-text-20: var(--mantine-color-text-1);

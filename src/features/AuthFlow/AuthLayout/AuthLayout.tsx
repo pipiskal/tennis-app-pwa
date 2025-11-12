@@ -2,7 +2,7 @@ import s from "./AuthLayout.module.css";
 import { Box, ScrollArea } from "@mantine/core";
 import { useLocation, useOutlet } from "react-router";
 import { AnimatePresence } from "framer-motion";
-import AnimatedAuthPage from "../../../components/AnimateAuthPage/AnimatedAuthPage";
+import AnimatedAuthPage from "./AnimateAuthPage/AnimatedAuthPage";
 
 const AuthLayout = () => {
   const location = useLocation();

@@ -1,6 +1,6 @@
 import { Box, Input } from "@mantine/core";
 import { useNavigate } from "react-router";
-import { MyButton } from "../../../components/Button/Button";
+import Button from "../../../components/ui-kit/Button/Button";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Register = () => {
 
       <Input placeholder="Email" type="email" mb={24} size="md" />
 
-      <Input placeholder="Password" type="password" mb={24} size="md" />
+      {/* <Input placeholder="Password" type="password" mb={24} size="md" /> */}
 
       <Box
         mb={24}
@@ -43,7 +43,7 @@ const Register = () => {
         Policy.
       </Box>
 
-      <MyButton
+      <Button
         label={"Create your account"}
         onClick={() => console.log("I will register")}
       />

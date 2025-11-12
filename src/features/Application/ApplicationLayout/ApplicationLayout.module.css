@@ -1,0 +1,30 @@
+.wrapper {
+  position: relative;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: var(--colors-primary-90);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  min-height: 44px;
+  background: white;
+}
+
+.container {
+  min-height: 100%;
+  flex: 1;
+  overflow-y: scroll;
+  padding-bottom: 84px;
+
+  /* Hide scrollbar (cross-browser) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.container::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent; /* Chrome, Safari, Opera */
+}
