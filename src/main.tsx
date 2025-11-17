@@ -17,6 +17,19 @@ import inputStyles from "./styles/MantineComponents/Input.module.css";
 import segmentedControlStyles from "./styles/MantineComponents/SegmentedControl.module.css";
 import App from "./app";
 
+// IMPORTANT: initialize i18n before App renders
+import "./i18n";
+import dayjs from "./utils/dayjs-setup";
+import i18n from "./i18n";
+
+dayjs.locale(i18n.language.split("-")[0]); // 'en', 'el'
+
+// update when language changes
+i18n.on("languageChanged", (lng) => {
+  const short = lng.split("-")[0]; // 'en-US' -> 'en'
+  dayjs.locale(short);
+});
+
 const flatTen = (hex: string): MantineColorsTuple => colorsTuple(hex);
 
 // TODO : this can be moved outside

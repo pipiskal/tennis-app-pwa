@@ -1,9 +1,33 @@
+import { useTranslation } from "react-i18next";
 import Button from "./ui-kit/Button/Button";
 import Input from "./ui-kit/Input/Input";
 import SegmentedTabs from "./navigation/SegmentedTabs/SegmentedTabs";
 import SelectDropdown from "./ui-kit/SelectDropdown/SelectDropdown";
+import dayjs from "dayjs";
+
+const EventTime = ({
+  start,
+  end,
+  short,
+}: {
+  start: string;
+  end: string;
+  short?: boolean;
+}) => {
+  const startDate = dayjs(start);
+  const endDate = dayjs(end);
+
+  const dayFormat = short ? "ddd" : "dddd";
+
+  const label = `${startDate.format(dayFormat)}, ${startDate.format(
+    "D MMMM"
+  )} ${startDate.format("H:mm")} - ${endDate.format("H:mm")}`;
+  return <span>{label}</span>;
+};
 
 const ComponentsDisplay = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <div
       style={{
@@ -13,10 +37,21 @@ const ComponentsDisplay = () => {
     >
       <div>
         <div>
-          <h1>Components</h1>
+          <h1>{t("components")}</h1>
         </div>
 
-        <Button label={"takis"} />
+        <EventTime
+          start={"2021-01-01T10:00:00"}
+          end={"2021-01-01T11:00:00"}
+          short={true}
+        />
+
+        <Button
+          label={"Change language"}
+          onClick={() => {
+            i18n.changeLanguage(i18n.language === "en" ? "el" : "en");
+          }}
+        />
 
         <br />
 
